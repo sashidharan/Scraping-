@@ -3,6 +3,9 @@
   var express=require('express');
   var fs=require('fs');
   var app=express();
+  var url = "http://directory.stokesentinel.co.uk/search/%METHOD%/%ACTION%";
+  url.replace("%METHOD", "stoke-on-trent%2Cstaffordshire");
+  url.replace("%ACTION%", "temple");
   request('http://directory.stokesentinel.co.uk/search/stoke-on-trent%2Cstaffordshire/temple', function (error, response, html) {
     if (!error && response.statusCode == 200) {
       // console.log(html);
